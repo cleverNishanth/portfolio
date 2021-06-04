@@ -1,13 +1,99 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  cursor: url('./images/cursor.png'), auto !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* font */
+
+@font-face {
+  font-family: 'ArcadeFont';
+  src: local('AssistantRegular'),
+    url('./fonts/ArcadeClassic.ttf') format('truetype');
+  font-weight: normal;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(9, 0, 59, 0.6),
+      rgba(34, 0, 30, 0.55)
+    ),
+    url('images/bg.gif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'ArcadeFont', 'Raleway', sans-serif;
+}
+
+
+:focus {
+  outline: 0 !important;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Animation */
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.blink_me_slow {
+  animation: blinkerslow 1.5s linear infinite;
+}
+@keyframes blinkerslow {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Text Colors */
+
+.text__blue {
+  color: rgb(88, 202, 255);
+}
+
+.text__yellow {
+  color: rgb(255, 175, 25);
+}
+
+.text__pink {
+  color: rgb(250, 95, 255);
+}
+
+.text__spaced {
+  word-spacing: 10px;
+  letter-spacing: 2px;
+}
+
+.start{
+  font-weight: 400 !important;
+}
+
+.underline__div {
+  width: 70%;
+  height: 2px;
+  background-color: yellow;
+  margin: auto;
 }
